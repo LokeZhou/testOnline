@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ttc.ssm.mapper.UserMapper" >
+   <resultMap id="BaseResultMap" type="com.ttc.ssm.po.User" >
+     <id column="userId" property="userId" jdbcType="INTEGER" />
+     <result column="userName" property="userName" jdbcType="CHAR" />
+     <result column="userPassword" property="userPassword" jdbcType="CHAR" />
+     <result column="userTelephone" property="userTelephone" jdbcType="CHAR" />
+     <result column="useEmail" property="useEmail" jdbcType="CHAR" />
+     <result column="userRank" property="userRank" jdbcType="INTEGER" />
+     <result column="testTime" property="testTime" jdbcType="INTEGER" />
+     <result column="upload" property="upload" jdbcType="INTEGER" />
+     <result column="userSex" property="userSex" jdbcType="VARCHAR" />    
+   </resultMap>
+   <insert id="insert" parameterType="com.ttc.ssm.po.User" >
+    insert into testuser(userid,username,userpassword,usertelephone,useremail,userrank,testtime,upload,usersex)
+    values(#{userId,jdbcType=INTEGER},#{userName,jdbcType=CHAR},#{userPassword,jdbcType=CHAR},#{userTelephone,jdbcType=CHAR},
+    #{useEmail,jdbcType=CHAR},#{userRank,jdbcType=INTEGER},#{testTime,jdbcType=INTEGER},#{upload,jdbcType=INTEGER},#{userSex,jdbcType=VARCHAR})
+    </insert>
+    
+    <sql id="Base_Column_List" >
+    userid,username,userpassword,usertelephone,useremail,userrank,testtime,upload,usersex
+    </sql>
+    
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from testuser
+    where userid = #{id,jdbcType=INTEGER}
+    </delete>
+    
+    <update id="updateByPrimaryKeySelective" parameterType="com.ttc.ssm.po.User" >
+    update testuser
+    <set >
+      <if test="userName != null" >
+        username = #{userName,jdbcType=CHAR},
+      </if>
+      <if test="userPassword != null" >
+        userpassword = #{userPassword,jdbcType=CHAR},
+      </if>
+      <if test="userTelephone != null" >
+        usertelephone = #{userTelephone,jdbcType=CHAR},
+      </if>
+      <if test="useEmail != null" >
+        useemail = #{useEmail,jdbcType=CHAR},
+      </if>
+      <if test="userRank != null" >
+        userrank = #{userRank,jdbcType=INTEGER},
+      </if>
+      <if test="testTime != null" >
+        testtime = #{testTime,jdbcType=INTEGER},
+      </if>
+      <if test="upload != null" >
+        upload = #{upload,jdbcType=INTEGER},
+      </if>
+      <if test="userSex != null" >
+        usersex = #{userSex,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where userid = #{userId,jdbcType=INTEGER}
+  </update>
+    
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+      select 
+     <include refid="Base_Column_List" />
+    from testuser
+    where userid = #{id,jdbcType=INTEGER}
+    </select>
+    
+    <select id="checkMaxId" resultType="java.lang.Integer">
+      select max(userid)
+      from testuser
+    </select>
+    <select id="getUserList" resultType="com.ttc.ssm.po.User">
+      select * from testuser
+    </select>
+</mapper>
