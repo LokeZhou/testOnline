@@ -136,4 +136,14 @@ public class IndexController {
 		
 	}
 	
+	@RequestMapping("/uploadSubmit")
+	public String uploadSubmit(){
+		       
+				
+				return "success";
+		
+	}
+	
+	
+	
 }
