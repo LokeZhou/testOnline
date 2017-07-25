@@ -11,6 +11,18 @@ public class Library {
 	private int libraryVersions;
 	private int libraryQuestions;
 
+	public Library()
+	{
+		
+	}
+	
+	public Library(Library record)
+	{
+		libraryUserId=record.getLibraryUserId();
+		libraryType=record.getLibraryType();
+		libraryVersions=record.getLibraryVersions();
+		libraryQuestions=record.getLibraryQuestions();
+	}
 	public int getLibraryUserId() {
 		return libraryUserId;
 	}

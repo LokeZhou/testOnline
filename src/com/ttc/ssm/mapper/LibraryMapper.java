@@ -15,5 +15,7 @@ public interface LibraryMapper {
 	 Library selectByPrimaryKey(Integer id);
 	 
 	 ArrayList<Library> getLibraryList();
+	 
+	 int checkMaxVersionByPrimaryKey(Integer id);
 
 }

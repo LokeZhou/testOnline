@@ -47,4 +47,10 @@
     <select id="getLibraryList" resultType="com.ttc.ssm.po.Library">
       select * from testlibrary
     </select>
+    
+    <select id="checkMaxVersionByPrimaryKey" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+      select max(versions)
+      from testlibrary
+      where userid = #{id,jdbcType=INTEGER}
+    </select>
 </mapper>

@@ -11,6 +11,10 @@ public class Question {
 	private String questionAnswer;
 	private int questionGrade;
 
+	public Question()
+	{
+		
+	}
 	public String getQuestionAnswer() {
 		return questionAnswer;
 	}

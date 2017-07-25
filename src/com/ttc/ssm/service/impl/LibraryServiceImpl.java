@@ -38,4 +38,8 @@ public class LibraryServiceImpl {
     	return libraryMapper.getLibraryList();
     }
 	
+    public int checkMaxVersionByPrimaryKey(Integer id)
+    {
+    	return libraryMapper.checkMaxVersionByPrimaryKey(id);
+    }
 }

@@ -47,7 +47,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-     <div class="textbox-group clearfix" >
+  
+   <form name="pull" method="post">
+       <div class="textbox-group clearfix" >
                 <label class="label">题目类型</label>
                 <input type="radio" name="libraryType" id="emotion" class="fn-left mt9" value="emotion">
 				<label for="emotion" class="emotion fn-left">情感测试</label>
@@ -69,462 +71,609 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      </div>
      <div><button class="btn btn-orange" id="start" data-model="submitBtn" data-controltype="Button" type="button" onclick="showtip(1)">确定</button>
      </div>
-   <form name="pull" method="post">
-    <c:forEach items="${listQuestions }" var="item" varStatus="status">
-     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip1"  >
-         <div style="padding:26px;">
+    
+      
+ 
+     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip1" >     
+            <div class="textbox-group countrycode-fix" data-model="name" data-controltype="TextBoxGroupUserName">
                 <label class="label">题目一</label>
-                <textarea name="listQuestions[${status.index }].questionContent" id="questionContent" class="mod-cus-input mod-cus-input-4" cols="60" rows="10"></textarea> 
-         </div>
-         <div style="padding:3px;">
+                <textarea  name="questionsList[0].questionContent" style="width:600px; height:150px;"></textarea>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">A答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerA" id="questionAnswerA" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[0].questionAnswerA"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">B答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerB" id="questionAnswerB" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
-                <label class="label">C答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerC" id="questionAnswerC" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[0].questionAnswerB"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">c答案</label>
+                <input class="textbox" type="text" name="questionsList[0].questionAnswerC"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">D答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerD" id="questionAnswerD" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div class="textbox-group clearfix" >
+                <input class="textbox" type="text" name="questionsList[0].questionAnswerD"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            
+            <div class="textbox-group clearfix" >
                 <label class="label">正确答案</label>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerA" class="fn-left mt9" value="A">
-				<label for="questionAnswerA" class="questionAnswerA fn-left">A</label>
+                <input type="radio" name="questionsList[0].questionAnswer" id="a" class="fn-left mt9" value="A">
+				<label for="a" class="sex nan fn-left">A</label>
 				<span class="note"></span>
-				<input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerB" class="fn-left mt9" value="B">
-				<label for="questionAnswerB" class="questionAnswerB fn-left">B</label>
+				<input type="radio" name="questionsList[0].questionAnswer" id="b" class="fn-left mt9" value="B">
+				<label for="b" class="sex nan fn-left">B</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerC" class="fn-left mt9" value="C">
-				<label for="questionAnswerC" class="questionAnswerC fn-left">C</label>
+				<input type="radio" name="questionsList[0].questionAnswer" id="c" class="fn-left mt9" value="C">
+				<label for="c" class="sex nan fn-left">C</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerD" class="fn-left mt9" value="D">
-				<label for="questionAnswerD" class="questionAnswerD fn-left">D</label>
+				<input type="radio" name="questionsList[0].questionAnswer" id="d" class="fn-left mt9" value="D">
+				<label for="d" class="sex nan fn-left">D</label>
 				<span class="note"></span>
-        </div>
-        <div class="textbox-group countrycode-fix" data-model="grade" data-controltype="TextBoxGroupgrade">
-                <label class="label">本题分数</label>
-                <input class="textbox" type="text" name="listQuestions[${status.index }].questionGrade" placeholder="请输入分数" maxlength="20" autocomplete="off" />
-        </div>
-        
+            </div>
+             <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">分数</label>
+                <input class="textbox" type="text" name="questionsList[0].questionGrade"  maxlength="20" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
         <div class="textbox-group textbox-group-submit">
                 <button class="btn btn-orange" data-model="submitBtn" data-controltype="Button" type="button" onclick="showtip(2)">下一题</button>
-        </div>    
-     </div>
-     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip2"  >
-         <div style="padding:26px;">
+        </div>
+     </div> 
+     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip2" >     
+            <div class="textbox-group countrycode-fix" data-model="name" data-controltype="TextBoxGroupUserName">
                 <label class="label">题目二</label>
-                <textarea name="listQuestions[${status.index }].questionContent" id="questionContent" class="mod-cus-input mod-cus-input-4" cols="60" rows="10"></textarea> 
-         </div>
-         <div style="padding:3px;">
+                <textarea  name="questionsList[1].questionContent" style="width:600px; height:150px;"></textarea>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">A答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerA" id="questionAnswerA" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[1].questionAnswerA"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">B答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerB" id="questionAnswerB" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
-                <label class="label">C答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerC" id="questionAnswerC" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[1].questionAnswerB"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">c答案</label>
+                <input class="textbox" type="text" name="questionsList[1].questionAnswerC"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">D答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerD" id="questionAnswerD" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div class="textbox-group clearfix" >
+                <input class="textbox" type="text" name="questionsList[1].questionAnswerD"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            
+            <div class="textbox-group clearfix" >
                 <label class="label">正确答案</label>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerA" class="fn-left mt9" value="A">
-				<label for="questionAnswerA" class="questionAnswerA fn-left">A</label>
+                <input type="radio" name="questionsList[1].questionAnswer" id="a" class="fn-left mt9" value="A">
+				<label for="a" class="sex nan fn-left">A</label>
 				<span class="note"></span>
-				<input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerB" class="fn-left mt9" value="B">
-				<label for="questionAnswerB" class="questionAnswerB fn-left">B</label>
+				<input type="radio" name="questionsList[1].questionAnswer" id="b" class="fn-left mt9" value="B">
+				<label for="b" class="sex nan fn-left">B</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerC" class="fn-left mt9" value="C">
-				<label for="questionAnswerC" class="questionAnswerC fn-left">C</label>
+				<input type="radio" name="questionsList[1].questionAnswer" id="c" class="fn-left mt9" value="C">
+				<label for="c" class="sex nan fn-left">C</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerD" class="fn-left mt9" value="D">
-				<label for="questionAnswerD" class="questionAnswerD fn-left">D</label>
+				<input type="radio" name="questionsList[1].questionAnswer" id="d" class="fn-left mt9" value="D">
+				<label for="d" class="sex nan fn-left">D</label>
 				<span class="note"></span>
-        </div>
-        <div class="textbox-group countrycode-fix" data-model="grade" data-controltype="TextBoxGroupgrade">
-                <label class="label">本题分数</label>
-                <input class="textbox" type="text" name="listQuestions[${status.index }].questionGrade" placeholder="请输入分数" maxlength="20" autocomplete="off" />
-        </div>
-        
+            </div>
+             <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">分数</label>
+                <input class="textbox" type="text" name="questionsList[1].questionGrade"  maxlength="20" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
         <div class="textbox-group textbox-group-submit">
                 <button class="btn btn-orange" data-model="submitBtn" data-controltype="Button" type="button" onclick="showtip(3)">下一题</button>
         </div>
-        
-    </div>
-     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip3"  >
-         <div style="padding:26px;">
+     </div> 
+     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip3" >     
+            <div class="textbox-group countrycode-fix" data-model="name" data-controltype="TextBoxGroupUserName">
                 <label class="label">题目三</label>
-                <textarea name="listQuestions[${status.index }].questionContent" id="questionContent" class="mod-cus-input mod-cus-input-4" cols="60" rows="10"></textarea> 
-         </div>
-         <div style="padding:3px;">
+                <textarea  name="questionsList[2].questionContent" style="width:600px; height:150px;"></textarea>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">A答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerA" id="questionAnswerA" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[2].questionAnswerA"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">B答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerB" id="questionAnswerB" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
-                <label class="label">C答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerC" id="questionAnswerC" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[2].questionAnswerB"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">c答案</label>
+                <input class="textbox" type="text" name="questionsList[2].questionAnswerC"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">D答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerD" id="questionAnswerD" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div class="textbox-group clearfix" >
+                <input class="textbox" type="text" name="questionsList[2].questionAnswerD"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            
+            <div class="textbox-group clearfix" >
                 <label class="label">正确答案</label>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerA" class="fn-left mt9" value="A">
-				<label for="questionAnswerA" class="questionAnswerA fn-left">A</label>
+                <input type="radio" name="questionsList[2].questionAnswer" id="a" class="fn-left mt9" value="A">
+				<label for="a" class="sex nan fn-left">A</label>
 				<span class="note"></span>
-				<input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerB" class="fn-left mt9" value="B">
-				<label for="questionAnswerB" class="questionAnswerB fn-left">B</label>
+				<input type="radio" name="questionsList[2].questionAnswer" id="b" class="fn-left mt9" value="B">
+				<label for="b" class="sex nan fn-left">B</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerC" class="fn-left mt9" value="C">
-				<label for="questionAnswerC" class="questionAnswerC fn-left">C</label>
+				<input type="radio" name="questionsList[2].questionAnswer" id="c" class="fn-left mt9" value="C">
+				<label for="c" class="sex nan fn-left">C</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerD" class="fn-left mt9" value="D">
-				<label for="questionAnswerD" class="questionAnswerD fn-left">D</label>
+				<input type="radio" name="questionsList[2].questionAnswer" id="d" class="fn-left mt9" value="D">
+				<label for="d" class="sex nan fn-left">D</label>
 				<span class="note"></span>
-        </div>
-        <div class="textbox-group countrycode-fix" data-model="grade" data-controltype="TextBoxGroupgrade">
-                <label class="label">本题分数</label>
-                <input class="textbox" type="text" name="listQuestions[${status.index }].questionGrade" placeholder="请输入分数" maxlength="20" autocomplete="off" />
-        </div>
-        
+            </div>
+             <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">分数</label>
+                <input class="textbox" type="text" name="questionsList[2].questionGrade"  maxlength="20" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
         <div class="textbox-group textbox-group-submit">
                 <button class="btn btn-orange" data-model="submitBtn" data-controltype="Button" type="button" onclick="showtip(4)">下一题</button>
         </div>
-        
-    </div>
-     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip4"  >
-         <div style="padding:26px;">
+     </div> 
+     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip4" >     
+            <div class="textbox-group countrycode-fix" data-model="name" data-controltype="TextBoxGroupUserName">
                 <label class="label">题目四</label>
-                <textarea name="listQuestions[${status.index }].questionContent" id="questionContent" class="mod-cus-input mod-cus-input-4" cols="60" rows="10"></textarea> 
-         </div>
-         <div style="padding:3px;">
+                <textarea  name="questionsList[3].questionContent" style="width:600px; height:150px;"></textarea>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">A答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerA" id="questionAnswerA" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[3].questionAnswerA"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">B答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerB" id="questionAnswerB" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
-                <label class="label">C答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerC" id="questionAnswerC" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[3].questionAnswerB"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">c答案</label>
+                <input class="textbox" type="text" name="questionsList[3].questionAnswerC"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">D答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerD" id="questionAnswerD" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div class="textbox-group clearfix" >
+                <input class="textbox" type="text" name="questionsList[3].questionAnswerD"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            
+            <div class="textbox-group clearfix" >
                 <label class="label">正确答案</label>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerA" class="fn-left mt9" value="A">
-				<label for="questionAnswerA" class="questionAnswerA fn-left">A</label>
+                <input type="radio" name="questionsList[3].questionAnswer" id="a" class="fn-left mt9" value="A">
+				<label for="a" class="sex nan fn-left">A</label>
 				<span class="note"></span>
-				<input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerB" class="fn-left mt9" value="B">
-				<label for="questionAnswerB" class="questionAnswerB fn-left">B</label>
+				<input type="radio" name="questionsList[3].questionAnswer" id="b" class="fn-left mt9" value="B">
+				<label for="b" class="sex nan fn-left">B</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerC" class="fn-left mt9" value="C">
-				<label for="questionAnswerC" class="questionAnswerC fn-left">C</label>
+				<input type="radio" name="questionsList[3].questionAnswer" id="c" class="fn-left mt9" value="C">
+				<label for="c" class="sex nan fn-left">C</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerD" class="fn-left mt9" value="D">
-				<label for="questionAnswerD" class="questionAnswerD fn-left">D</label>
+				<input type="radio" name="questionsList[3].questionAnswer" id="d" class="fn-left mt9" value="D">
+				<label for="d" class="sex nan fn-left">D</label>
 				<span class="note"></span>
-      </div>
-        <div class="textbox-group countrycode-fix" data-model="grade" data-controltype="TextBoxGroupgrade">
-                <label class="label">本题分数</label>
-                <input class="textbox" type="text" name="listQuestions[${status.index }].questionGrade" placeholder="请输入分数" maxlength="20" autocomplete="off" />
-        </div>
-        
+            </div>
+             <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">分数</label>
+                <input class="textbox" type="text" name="questionsList[3].questionGrade"  maxlength="20" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
         <div class="textbox-group textbox-group-submit">
                 <button class="btn btn-orange" data-model="submitBtn" data-controltype="Button" type="button" onclick="showtip(5)">下一题</button>
-        </div>     
-     </div>
-     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip5"  >
-         <div style="padding:26px;">
+        </div>
+     </div> 
+     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip5" >     
+            <div class="textbox-group countrycode-fix" data-model="name" data-controltype="TextBoxGroupUserName">
                 <label class="label">题目五</label>
-                <textarea name="listQuestions[${status.index }].questionContent" id="questionContent" class="mod-cus-input mod-cus-input-4" cols="60" rows="10"></textarea> 
-         </div>
-         <div style="padding:3px;">
+                <textarea  name="questionsList[4].questionContent" style="width:600px; height:150px;"></textarea>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">A答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerA" id="questionAnswerA" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[4].questionAnswerA"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">B答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerB" id="questionAnswerB" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
-                <label class="label">C答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerC" id="questionAnswerC" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[4].questionAnswerB"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">c答案</label>
+                <input class="textbox" type="text" name="questionsList[4].questionAnswerC"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">D答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerD" id="questionAnswerD" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div class="textbox-group clearfix" >
+                <input class="textbox" type="text" name="questionsList[4].questionAnswerD"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            
+            <div class="textbox-group clearfix" >
                 <label class="label">正确答案</label>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerA" class="fn-left mt9" value="A">
-				<label for="questionAnswerA" class="questionAnswerA fn-left">A</label>
+                <input type="radio" name="questionsList[4].questionAnswer" id="a" class="fn-left mt9" value="A">
+				<label for="a" class="sex nan fn-left">A</label>
 				<span class="note"></span>
-				<input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerB" class="fn-left mt9" value="B">
-				<label for="questionAnswerB" class="questionAnswerB fn-left">B</label>
+				<input type="radio" name="questionsList[4].questionAnswer" id="b" class="fn-left mt9" value="B">
+				<label for="b" class="sex nan fn-left">B</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerC" class="fn-left mt9" value="C">
-				<label for="questionAnswerC" class="questionAnswerC fn-left">C</label>
+				<input type="radio" name="questionsList[4].questionAnswer" id="c" class="fn-left mt9" value="C">
+				<label for="c" class="sex nan fn-left">C</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerD" class="fn-left mt9" value="D">
-				<label for="questionAnswerD" class="questionAnswerD fn-left">D</label>
+				<input type="radio" name="questionsList[4].questionAnswer" id="d" class="fn-left mt9" value="D">
+				<label for="d" class="sex nan fn-left">D</label>
 				<span class="note"></span>
-        </div>
-        <div class="textbox-group countrycode-fix" data-model="grade" data-controltype="TextBoxGroupgrade">
-                <label class="label">本题分数</label>
-                <input class="textbox" type="text" name="listQuestions[${status.index }].questionGrade" placeholder="请输入分数" maxlength="20" autocomplete="off" />
-        </div>
-        
+            </div>
+             <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">分数</label>
+                <input class="textbox" type="text" name="questionsList[4].questionGrade"  maxlength="20" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
         <div class="textbox-group textbox-group-submit">
                 <button class="btn btn-orange" data-model="submitBtn" data-controltype="Button" type="button" onclick="showtip(6)">下一题</button>
         </div>
-        
-    </div>
-     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip6"  >
-         <div style="padding:26px;">
+     </div> 
+     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip6" >     
+            <div class="textbox-group countrycode-fix" data-model="name" data-controltype="TextBoxGroupUserName">
                 <label class="label">题目六</label>
-                <textarea name="listQuestions[${status.index }].questionContent" id="questionContent" class="mod-cus-input mod-cus-input-4" cols="60" rows="10"></textarea> 
-         </div>
-         <div style="padding:3px;">
+                <textarea  name="questionsList[5].questionContent" style="width:600px; height:150px;"></textarea>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">A答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerA" id="questionAnswerA" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[5].questionAnswerA"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">B答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerB" id="questionAnswerB" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
-                <label class="label">C答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerC" id="questionAnswerC" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[5].questionAnswerB"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">c答案</label>
+                <input class="textbox" type="text" name="questionsList[5].questionAnswerC"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">D答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerD" id="questionAnswerD" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div class="textbox-group clearfix" >
+                <input class="textbox" type="text" name="questionsList[5].questionAnswerD"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            
+            <div class="textbox-group clearfix" >
                 <label class="label">正确答案</label>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerA" class="fn-left mt9" value="A">
-				<label for="questionAnswerA" class="questionAnswerA fn-left">A</label>
+                <input type="radio" name="questionsList[5].questionAnswer" id="a" class="fn-left mt9" value="A">
+				<label for="a" class="sex nan fn-left">A</label>
 				<span class="note"></span>
-				<input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerB" class="fn-left mt9" value="B">
-				<label for="questionAnswerB" class="questionAnswerB fn-left">B</label>
+				<input type="radio" name="questionsList[5].questionAnswer" id="b" class="fn-left mt9" value="B">
+				<label for="b" class="sex nan fn-left">B</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerC" class="fn-left mt9" value="C">
-				<label for="questionAnswerC" class="questionAnswerC fn-left">C</label>
+				<input type="radio" name="questionsList[5].questionAnswer" id="c" class="fn-left mt9" value="C">
+				<label for="c" class="sex nan fn-left">C</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerD" class="fn-left mt9" value="D">
-				<label for="questionAnswerD" class="questionAnswerD fn-left">D</label>
+				<input type="radio" name="questionsList[5].questionAnswer" id="d" class="fn-left mt9" value="D">
+				<label for="d" class="sex nan fn-left">D</label>
 				<span class="note"></span>
-        </div>
-        <div class="textbox-group countrycode-fix" data-model="grade" data-controltype="TextBoxGroupgrade">
-                <label class="label">本题分数</label>
-                <input class="textbox" type="text" name="listQuestions[${status.index }].questionGrade" placeholder="请输入分数" maxlength="20" autocomplete="off" />
-        </div>
-        
+            </div>
+             <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">分数</label>
+                <input class="textbox" type="text" name="questionsList[5].questionGrade"  maxlength="20" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
         <div class="textbox-group textbox-group-submit">
                 <button class="btn btn-orange" data-model="submitBtn" data-controltype="Button" type="button" onclick="showtip(7)">下一题</button>
-        </div>    
-     </div>
-     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip7"  >
-         <div style="padding:26px;">
+        </div>
+     </div> 
+     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip7" >     
+            <div class="textbox-group countrycode-fix" data-model="name" data-controltype="TextBoxGroupUserName">
                 <label class="label">题目七</label>
-                <textarea name="listQuestions[${status.index }].questionContent" id="questionContent" class="mod-cus-input mod-cus-input-4" cols="60" rows="10"></textarea> 
-         </div>
-         <div style="padding:3px;">
+                <textarea  name="questionsList[6].questionContent" style="width:600px; height:150px;"></textarea>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">A答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerA" id="questionAnswerA" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[6].questionAnswerA"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">B答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerB" id="questionAnswerB" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
-                <label class="label">C答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerC" id="questionAnswerC" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[6].questionAnswerB"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">c答案</label>
+                <input class="textbox" type="text" name="questionsList[6].questionAnswerC"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">D答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerD" id="questionAnswerD" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div class="textbox-group clearfix" >
+                <input class="textbox" type="text" name="questionsList[6].questionAnswerD"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            
+            <div class="textbox-group clearfix" >
                 <label class="label">正确答案</label>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerA" class="fn-left mt9" value="A">
-				<label for="questionAnswerA" class="questionAnswerA fn-left">A</label>
+                <input type="radio" name="questionsList[6].questionAnswer" id="a" class="fn-left mt9" value="A">
+				<label for="a" class="sex nan fn-left">A</label>
 				<span class="note"></span>
-				<input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerB" class="fn-left mt9" value="B">
-				<label for="questionAnswerB" class="questionAnswerB fn-left">B</label>
+				<input type="radio" name="questionsList[6].questionAnswer" id="b" class="fn-left mt9" value="B">
+				<label for="b" class="sex nan fn-left">B</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerC" class="fn-left mt9" value="C">
-				<label for="questionAnswerC" class="questionAnswerC fn-left">C</label>
+				<input type="radio" name="questionsList[6].questionAnswer" id="c" class="fn-left mt9" value="C">
+				<label for="c" class="sex nan fn-left">C</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerD" class="fn-left mt9" value="D">
-				<label for="questionAnswerD" class="questionAnswerD fn-left">D</label>
+				<input type="radio" name="questionsList[6].questionAnswer" id="d" class="fn-left mt9" value="D">
+				<label for="d" class="sex nan fn-left">D</label>
 				<span class="note"></span>
-        </div>
-        <div class="textbox-group countrycode-fix" data-model="grade" data-controltype="TextBoxGroupgrade">
-                <label class="label">本题分数</label>
-                <input class="textbox" type="text" name="listQuestions[${status.index }].questionGrade" placeholder="请输入分数" maxlength="20" autocomplete="off" />
-        </div>
-        
+            </div>
+             <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">分数</label>
+                <input class="textbox" type="text" name="questionsList[6].questionGrade"  maxlength="20" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
         <div class="textbox-group textbox-group-submit">
                 <button class="btn btn-orange" data-model="submitBtn" data-controltype="Button" type="button" onclick="showtip(8)">下一题</button>
-        </div>      
-    </div>
-     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip8"  >
-         <div style="padding:26px;">
+        </div>
+     </div> 
+     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip8" >     
+            <div class="textbox-group countrycode-fix" data-model="name" data-controltype="TextBoxGroupUserName">
                 <label class="label">题目八</label>
-                <textarea name="listQuestions[${status.index }].questionContent" id="questionContent" class="mod-cus-input mod-cus-input-4" cols="60" rows="10"></textarea> 
-         </div>
-         <div style="padding:3px;">
+                <textarea  name="questionsList[7].questionContent" style="width:600px; height:150px;"></textarea>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">A答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerA" id="questionAnswerA" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[7].questionAnswerA"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">B答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerB" id="questionAnswerB" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[7].questionAnswerB"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">C答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerC" id="questionAnswerC" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[7].questionAnswerC"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">D答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerD" id="questionAnswerD" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div class="textbox-group clearfix" >
+                <input class="textbox" type="text" name="questionsList[7].questionAnswerD"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            
+            <div class="textbox-group clearfix" >
                 <label class="label">正确答案</label>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerA" class="fn-left mt9" value="A">
-				<label for="questionAnswerA" class="questionAnswerA fn-left">A</label>
+                <input type="radio" name="questionsList[7].questionAnswer" id="a" class="fn-left mt9" value="A">
+				<label for="a" class="sex nan fn-left">A</label>
 				<span class="note"></span>
-				<input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerB" class="fn-left mt9" value="B">
-				<label for="questionAnswerB" class="questionAnswerB fn-left">B</label>
+				<input type="radio" name="questionsList[7].questionAnswer" id="b" class="fn-left mt9" value="B">
+				<label for="b" class="sex nan fn-left">B</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerC" class="fn-left mt9" value="C">
-				<label for="questionAnswerC" class="questionAnswerC fn-left">C</label>
+				<input type="radio" name="questionsList[7].questionAnswer" id="c" class="fn-left mt9" value="C">
+				<label for="c" class="sex nan fn-left">c</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerD" class="fn-left mt9" value="D">
-				<label for="questionAnswerD" class="questionAnswerD fn-left">D</label>
+				<input type="radio" name="questionsList[7].questionAnswer" id="d" class="fn-left mt9" value="D">
+				<label for="d" class="sex nan fn-left">D</label>
 				<span class="note"></span>
-        </div>
-        <div class="textbox-group countrycode-fix" data-model="grade" data-controltype="TextBoxGroupgrade">
-                <label class="label">本题分数</label>
-                <input class="textbox" type="text" name="listQuestions[${status.index }].questionGrade" placeholder="请输入分数" maxlength="20" autocomplete="off" />
-        </div>
-        
+            </div>
+             <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">分数</label>
+                <input class="textbox" type="text" name="questionsList[7].questionGrade"  maxlength="20" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
         <div class="textbox-group textbox-group-submit">
                 <button class="btn btn-orange" data-model="submitBtn" data-controltype="Button" type="button" onclick="showtip(9)">下一题</button>
         </div>
-     </div>
-     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip9"  >
-         <div style="padding:26px;">
+     </div> 
+     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip9" >     
+            <div class="textbox-group countrycode-fix" data-model="name" data-controltype="TextBoxGroupUserName">
                 <label class="label">题目九</label>
-                <textarea name="listQuestions[${status.index }].questionContent" id="questionContent" class="mod-cus-input mod-cus-input-4" cols="60" rows="10"></textarea> 
-         </div>
-         <div style="padding:3px;">
+                <textarea  name="questionsList[8].questionContent" style="width:600px; height:150px;"></textarea>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">A答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerA" id="questionAnswerA" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[8].questionAnswerA"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">B答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerB" id="questionAnswerB" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
-                <label class="label">C答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerC" id="questionAnswerC" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[8].questionAnswerB"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">c答案</label>
+                <input class="textbox" type="text" name="questionsList[8].questionAnswerC"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">D答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerD" id="questionAnswerD" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div class="textbox-group clearfix" >
+                <input class="textbox" type="text" name="questionsList[8].questionAnswerD"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            
+            <div class="textbox-group clearfix" >
                 <label class="label">正确答案</label>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerA" class="fn-left mt9" value="A">
-				<label for="questionAnswerA" class="questionAnswerA fn-left">A</label>
+                <input type="radio" name="questionsList[8].questionAnswer" id="a" class="fn-left mt9" value="A">
+				<label for="a" class="sex nan fn-left">A</label>
 				<span class="note"></span>
-				<input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerB" class="fn-left mt9" value="B">
-				<label for="questionAnswerB" class="questionAnswerB fn-left">B</label>
+				<input type="radio" name="questionsList[8].questionAnswer" id="b" class="fn-left mt9" value="B">
+				<label for="b" class="sex nan fn-left">B</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerC" class="fn-left mt9" value="C">
-				<label for="questionAnswerC" class="questionAnswerC fn-left">C</label>
+				<input type="radio" name="questionsList[8].questionAnswer" id="c" class="fn-left mt9" value="C">
+				<label for="c" class="sex nan fn-left">c</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerD" class="fn-left mt9" value="D">
-				<label for="questionAnswerD" class="questionAnswerD fn-left">D</label>
+				<input type="radio" name="questionsList[8].questionAnswer" id="d" class="fn-left mt9" value="D">
+				<label for="d" class="sex nan fn-left">D</label>
 				<span class="note"></span>
-        </div>
-        <div class="textbox-group countrycode-fix" data-model="grade" data-controltype="TextBoxGroupgrade">
-                <label class="label">本题分数</label>
-                <input class="textbox" type="text" name="listQuestions[${status.index }].questionGrade" placeholder="请输入分数" maxlength="20" autocomplete="off" />
-        </div>
-        
+            </div>
+             <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">分数</label>
+                <input class="textbox" type="text" name="questionsList[8].questionGrade"  maxlength="20" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
         <div class="textbox-group textbox-group-submit">
                 <button class="btn btn-orange" data-model="submitBtn" data-controltype="Button" type="button" onclick="showtip(10)">下一题</button>
         </div>
-     </div>
-     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip10"  >
-         <div style="padding:26px;">
+     </div> 
+     <div  style="background-color:#F9F9F9;height:300px;display:none;font-size:15pt;font-family:'微软雅黑';"  id="tip10" >     
+            <div class="textbox-group countrycode-fix" data-model="name" data-controltype="TextBoxGroupUserName">
                 <label class="label">题目十</label>
-                <textarea name="listQuestions[${status.index }].questionContent" id="questionContent" class="mod-cus-input mod-cus-input-4" cols="60" rows="10"></textarea> 
-         </div>
-         <div style="padding:3px;">
+                <textarea  name="questionsList[9].questionContent" style="width:600px; height:150px;"></textarea>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">A答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerA" id="questionAnswerA" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[9].questionAnswerA"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">B答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerB" id="questionAnswerB" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
-                <label class="label">C答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerC" id="questionAnswerC" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div style="padding:3px;">
+                <input class="textbox" type="text" name="questionsList[9].questionAnswerB"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">c答案</label>
+                <input class="textbox" type="text" name="questionsList[9].questionAnswerC"  style="width:200px; height:20px;" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
                 <label class="label">D答案</label>
-                <textarea name="listQuestions[${status.index }].questionAnswerD" id="questionAnswerD" class="mod-cus-input mod-cus-input-4" cols="60" rows="1"></textarea>
-         </div> 
-         <div class="textbox-group clearfix" >
+                <input class="textbox" type="text" name="questionsList[9].questionAnswerD"  style="width:200px; height:20px;"/>
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
+            
+            <div class="textbox-group clearfix" >
                 <label class="label">正确答案</label>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerA" class="fn-left mt9" value="A">
-				<label for="questionAnswerA" class="questionAnswerA fn-left">A</label>
+                <input type="radio" name="questionsList[9].questionAnswer" id="a" class="fn-left mt9" value="A">
+				<label for="a" class="sex nan fn-left">A</label>
 				<span class="note"></span>
-				<input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerB" class="fn-left mt9" value="B">
-				<label for="questionAnswerB" class="questionAnswerB fn-left">B</label>
+				<input type="radio" name="questionsList[9].questionAnswer" id="b" class="fn-left mt9" value="B">
+				<label for="b" class="sex nan fn-left">B</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerC" class="fn-left mt9" value="C">
-				<label for="questionAnswerC" class="questionAnswerC fn-left">C</label>
+				<input type="radio" name="questionsList[9].questionAnswer" id="c" class="fn-left mt9" value="C">
+				<label for="c" class="sex nan fn-left">C</label>
 				<span class="note"></span>
-                <input type="radio" name="listQuestions[${status.index }].questionAnswer" id="questionAnswerD" class="fn-left mt9" value="D">
-				<label for="questionAnswerD" class="questionAnswerD fn-left">D</label>
+				<input type="radio" name="questionsList[9].questionAnswer" id="d" class="fn-left mt9" value="D">
+				<label for="d" class="sex nan fn-left">D</label>
 				<span class="note"></span>
-        </div>
-        <div class="textbox-group countrycode-fix" data-model="grade" data-controltype="TextBoxGroupgrade">
-                <label class="label">本题分数</label>
-                <input class="textbox" type="text" name="listQuestions[${status.index }].questionGrade" placeholder="请输入分数" maxlength="20" autocomplete="off" />
-        </div>
-        
+            </div>
+             <div class="textbox-group" data-model="password" data-controltype="TextBoxGroupPassword">
+                <label class="label">分数</label>
+                <input class="textbox" type="text" name="questionsList[9].questionGrade"  maxlength="20" />
+                <span class="note"></span>
+                    <span class="safe-grade safe-grade-hidden">
+                    </span>
+            </div>
         <div class="textbox-group textbox-group-submit">
                 <button class="btn btn-orange" data-model="submitBtn" data-controltype="Button" type="button" onclick="showtip(11)">下一题</button>
-        </div>    
-    </div>
-    </c:forEach>
-   </form>                                  
+        </div>
+     </div> 
+    </form>                         
   </body>
 </html>

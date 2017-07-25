@@ -17,6 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ttc.ssm.controller.validation.ValidGroup1;
 import com.ttc.ssm.controller.validation.ValidGroup2;
+import com.ttc.ssm.po.Library;
+import com.ttc.ssm.po.ListQuestionVo;
+import com.ttc.ssm.po.Question;
 import com.ttc.ssm.po.User;
 import com.ttc.ssm.service.UserService;
 
@@ -137,9 +140,16 @@ public class IndexController {
 	}
 	
 	@RequestMapping("/uploadSubmit")
-	public String uploadSubmit(){
-		       
-				
+	public String uploadSubmit(HttpServletRequest request,ListQuestionVo  listQuestionVo,Library library){
+		//Model model,HttpServletRequest request,ListQuestionVo listQuestionsVo
+		 Question[]  test=listQuestionVo.getQuestionsList();
+		   // ArrayList<Question> list=listQuestionVo.getListQuestions();
+		// ListQuestionVo test=new ListQuestionVo(listQuestionVo);
+		       // Library library=new Library(test.getLibrary());
+		    
+				System.out.print(library.getLibraryType());
+		     for(int i=0;i<10;i++)
+				System.out.print(test[i].getQuestionContent());
 				return "success";
 		
 	}
