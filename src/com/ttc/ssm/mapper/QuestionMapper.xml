@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ttc.ssm.mapper.QuestionMapper" >
+    <resultMap id="BaseResultMap" type="com.ttc.ssm.po.Question" >
+     <id column="questionUserId" property="questionUserId" jdbcType="INTEGER" />
+     <result column="questionVersion" property="questionVersion" jdbcType="INTEGER" />
+     <result column="questionContent" property="questionContent" jdbcType="CHAR" />
+     <result column="questionAnswerA" property="questionAnswerA" jdbcType="CHAR" />
+     <result column="questionAnswerB" property="questionAnswerB" jdbcType="CHAR" />
+     <result column="questionAnswerC" property="questionAnswerC" jdbcType="CHAR" />
+     <result column="questionAnswerD" property="questionAnswerD" jdbcType="CHAR" />
+     <result column="questionAnswer" property="questionAnswer" jdbcType="CHAR" />
+     <result column="questionGrade" property="questionGrade" jdbcType="INTEGER" />    
+   </resultMap>
+    <insert id="insert" parameterType="com.ttc.ssm.po.Question" >
+    insert into testquestion(userid,versions,content,answera,answerb,answerc,answerd,answer,grade)
+    values(#{userid,jdbcType=INTEGER},#{versions,jdbcType=INTEGER},#{content,jdbcType=CHAR},#{answera,jdbcType=CHAR},
+    #{answerb,jdbcType=CHAR},#{answerc,jdbcType=CHAR},#{answerd,jdbcType=CHAR},#{answer,jdbcType=CHAR},#{grade,jdbcType=INTEGER})
+    </insert>
+    <delete id="deleteByPrimaryKey" parameterType="com.ttc.ssm.po.Library">
+     delete from testquestion
+     where userid=#{userid,jdbcType=INTEGER} and versions=#{versions,jdbcType=INTEGER}
+    </delete>
+    <select id="getQuestionList"  resultType="com.ttc.ssm.po.Question" parameterType="com.ttc.ssm.po.Library" >
+      select * from testquestion
+      where userid=#{userid,jdbcType=INTEGER} and versions=#{versions,jdbcType=INTEGER}
+    </select>
+</mapper>

@@ -1,5 +1,6 @@
 package com.ttc.ssm.po;
 
+import javax.ejb.Init;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Email;
@@ -34,7 +35,7 @@ public class User {
 		userPassword=null;
 		userTelephone=null;
 		userEmail=null;
-		userRank="commonUser";
+		userRank="member";
 		userSex=null;
 		testTime=0;
 		upload=0;
@@ -51,6 +52,17 @@ public class User {
 		userSex=user.getUserSex();
 		testTime=user.getTestTime();
 		upload=user.getUpload();
+	}
+	public void Init(){
+		userId=null;
+		userName=null;
+		userPassword=null;
+		userTelephone=null;
+		userEmail=null;
+		userRank="xxxxxx";
+		userSex=null;
+		testTime=0;
+		upload=0;
 	}
 	public Integer getUserId() {
 		return userId;
@@ -88,8 +100,8 @@ public class User {
 		return userEmail;
 	}
 
-	public void setUserEmail(String useEmail) {
-		this.userEmail = useEmail;
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 
 	public String getUserRank() {

@@ -1,90 +1,116 @@
 package com.ttc.ssm.po;
 
+import javax.persistence.Column;
+import javax.validation.constraints.NotNull;
+
+import com.ttc.ssm.controller.validation.ValidGroup3;
+
 public class Question {
-	private int questionUserId;
-	private int questionVersion;
-	private String questionContent;
-	private String questionAnswerA;
-	private String questionAnswerB;
-	private String questionAnswerC;
-	private String questionAnswerD;
-	private String questionAnswer;
-	private int questionGrade;
+
+	private Integer userid;
+	
+	private Integer versions;
+    
+	private String content;
+	
+	private String answera;
+	
+	private String answerb;
+	
+	private String answerc;
+	
+	private String answerd;
+	
+	private String answer;
+	
+	private Integer grade;
 
 	public Question()
 	{
-		
-	}
-	public String getQuestionAnswer() {
-		return questionAnswer;
-	}
-
-	public void setQuestionAnswer(String questionAnswer) {
-		this.questionAnswer = questionAnswer;
-	}
-
-	public int getQuestionUserId() {
-		return questionUserId;
+		userid=null;
+		versions=null;
+		content=null;
+		answera=null;
+		answerb=null;
+		answerc=null;
+		answerd=null;
+		answer=null;
+		grade=null;
 	}
 
-	public void setQuestionUserId(int questionUserId) {
-		this.questionUserId = questionUserId;
+	public Integer getUserid() {
+		return userid;
 	}
 
-	public int getQuestionVersion() {
-		return questionVersion;
+	public void setUserid(Integer userid) {
+		this.userid = userid;
 	}
 
-	public void setQuestionVersion(int questionVersion) {
-		this.questionVersion = questionVersion;
+	public Integer getVersions() {
+		return versions;
 	}
 
-	public String getQuestionContent() {
-		return questionContent;
+	public void setVersions(Integer versions) {
+		this.versions = versions;
 	}
 
-	public void setQuestionContent(String questionContent) {
-		this.questionContent = questionContent;
+	public String getContent() {
+		return content;
 	}
 
-	public String getQuestionAnswerA() {
-		return questionAnswerA;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
-	public void setQuestionAnswerA(String questionAnswerA) {
-		this.questionAnswerA = questionAnswerA;
+	public String getAnswera() {
+		return answera;
 	}
 
-	public String getQuestionAnswerB() {
-		return questionAnswerB;
+	public void setAnswera(String answera) {
+		this.answera = answera;
 	}
 
-	public void setQuestionAnswerB(String questionAnswerB) {
-		this.questionAnswerB = questionAnswerB;
+	public String getAnswerb() {
+		return answerb;
 	}
 
-	public String getQuestionAnswerC() {
-		return questionAnswerC;
+	public void setAnswerb(String answerb) {
+		this.answerb = answerb;
 	}
 
-	public void setQuestionAnswerC(String questionAnswerC) {
-		this.questionAnswerC = questionAnswerC;
+	public String getAnswerc() {
+		return answerc;
 	}
 
-	public String getQuestionAnswerD() {
-		return questionAnswerD;
+	public void setAnswerc(String answerc) {
+		this.answerc = answerc;
 	}
 
-	public void setQuestionAnswerD(String questionAnswerD) {
-		this.questionAnswerD = questionAnswerD;
+	public String getAnswerd() {
+		return answerd;
 	}
 
-	public int getQuestionGrade() {
-		return questionGrade;
+	public void setAnswerd(String answerd) {
+		this.answerd = answerd;
 	}
 
-	public void setQuestionGrade(int grade) {
-		this.questionGrade = grade;
+	public String getAnswer() {
+		return answer;
 	}
+
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+
+	public Integer getGrade() {
+		return grade;
+	}
+
+	public void setGrade(Integer grade) {
+		this.grade = grade;
+	}
+	
+	
+	
 
 }

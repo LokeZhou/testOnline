@@ -12,6 +12,8 @@ public interface LibraryMapper {
 	 
 	 int updateByPrimaryKeySelective(Library record);
 	 
+	 ArrayList<Integer> selectByType(String type);
+	 
 	 Library selectByPrimaryKey(Integer id);
 	 
 	 ArrayList<Library> getLibraryList();

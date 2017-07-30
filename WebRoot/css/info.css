@@ -1,0 +1,19 @@
+#Section1 ul li, #friends ul li, #stranger ul li, #Section2 ul li {
+    height: 150px;
+    margin-top: 10px;
+    list-style:none;
+}
+
+#div5 ul li {
+    height: 100px;
+    border: dashed 1px pink;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    list-style: none;
+    width: 92%;
+}
+
+.friend_div,.stranger_div{
+    width: 92%;border: dashed 1px hotpink;height: 100%;padding: 10px
+
+}

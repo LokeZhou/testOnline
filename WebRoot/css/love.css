@@ -1,0 +1,283 @@
+@CHARSET "UTF-8";
+.page-header-area {
+  background: rgba(0, 0, 0, 0) url(../images/lovestory/banner.png) no-repeat scroll center center / cover;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 100px 0;
+}
+.page-header-area h1 {
+  font-size: 60px;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+/*------------------------*/
+.single-services-area {
+  padding: 100px 0;
+}
+.single-services-area .sidebar-area .single-sidebar h2 {
+  color: #382d44;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  position: relative;
+  text-transform: uppercase;
+}
+.single-services-area .sidebar-area .single-sidebar h2:after {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: #ee0548;
+  content: "";
+}
+.single-services-area .sidebar-area .single-sidebar #custom-search-input .search-query {
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  margin-bottom: 0;
+  padding-left: 15px;
+  padding-right: 3px;
+  height: 40px;
+  background: #eeeeee;
+  border: 1px solid #eeeeee;
+}
+.single-services-area .sidebar-area .single-sidebar .serach-box {
+  position: relative;
+}
+.single-services-area .sidebar-area .single-sidebar .serach-box button {
+  font-size: 20px;
+  height: auto;
+  position: absolute;
+  right: 10px;
+  top: -3px;
+  width: 25px;
+  z-index: 99;
+  background: transparent;
+}
+.single-services-area .sidebar-area .single-sidebar .serach-box button i {
+  font-size: 18px;
+}
+.single-services-area .sidebar-area .single-sidebar ul li {
+  border-bottom: 1px solid #e7e7e7;
+  display: block;
+  padding: 6px 0;
+}
+.single-services-area .sidebar-area .single-sidebar ul li a {
+  display: block;
+  color: #646464;
+  transition: all 0.5s ease 0s;
+  font-size: 16px;
+}
+.single-services-area .sidebar-area .single-sidebar ul li a i {
+  margin-right: 10px;
+}
+.single-services-area .sidebar-area .single-sidebar ul li a:hover {
+  color: #ee0548;
+}
+.single-services-area .sidebar-area .single-sidebar ul li:last-child {
+  border-bottom: 0px solid #ffffff;
+}
+.single-services-area .sidebar-area .single-sidebar .shop-advertise-area img {
+  width: 100%;
+}
+.single-services-area .sidebar-area .single-sidebar .shop-advertise-area img:hover {
+  opacity: .9;
+}
+.single-services-area .sidebar-area .single-sidebar .shop-advertise-area img {
+  width: 100%;
+}
+.single-services-area .sidebar-area .single-sidebar .shop-advertise-area img:hover {
+  opacity: .9;
+}
+.single-services-area .single-services-content img {
+  margin-bottom: 30px;
+  display: block;
+}
+.single-services-area .single-services-content img:hover {
+  opacity: .9;
+}
+.single-services-area .single-services-content h2 {
+  position: relative;
+  color: #111111;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+.single-services-area .single-services-content h2:after {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: #ee0548;
+  content: "";
+}
+
+/* ------------------------------------
+20.Blog Area Start Here 
+---------------------------------------*/
+.blog-page-area {
+  padding: 100px 0;
+}
+.blog-page-area .blog-page-content .single-blog .media .pull-left {
+  margin-right: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.blog-page-area .blog-page-content .single-blog .media .pull-left:hover a:after {
+  opacity: 1;
+  visibility: visible;
+  transform: scaleY(1);
+}
+.blog-page-area .blog-page-content .single-blog .media .pull-left:hover .details {
+  opacity: 1;
+  transform: scaleY(1);
+}
+.blog-page-area .blog-page-content .single-blog .media .pull-left a {
+  position: relative;
+  display: block;
+}
+.blog-page-area .blog-page-content .single-blog .media .pull-left a:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(238, 5, 72, 0.8);
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: scaleY(0);
+  transform-origin: 0 0 0;
+  transition: all 0.5s ease 0s;
+}
+.blog-page-area .blog-page-content .single-blog .media .pull-left a img {
+  width: 100%;
+}
+.blog-page-area .blog-page-content .single-blog .media .pull-left .details {
+  top: 35%;
+  transform-origin: 0 0 0;
+  transition: all 0.5s ease 0s;
+  position: absolute;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  z-index: 9;
+  opacity: 0;
+}
+.blog-page-area .blog-page-content .single-blog .media .pull-left .details a {
+  display: block;
+  background: #ffffff;
+  width: 45px;
+  height: 45px;
+  z-index: 999;
+  margin: auto;
+  line-height: 45px;
+  color: #111111;
+  transition: all 0.5s ease 0s;
+  text-decoration: none;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+}
+.blog-page-area .blog-page-content .single-blog .media .pull-left .details a:hover {
+  background: #ee0548;
+  color: #ffffff;
+}
+.blog-page-area .blog-page-content .single-blog .media .pull-left .details a:after {
+  display: none;
+}
+.blog-page-area .blog-page-content .single-blog .media .pull-left .date {
+  position: relative;
+  margin-bottom: 30px;
+}
+.blog-page-area .blog-page-content .single-blog .media .pull-left .date ul {
+  position: absolute;
+  top: -60px;
+  right: 5px;
+  background: url(../images/lovestory/heart.png) no-repeat;
+  width: 104px;
+  height: 60px;
+  text-align: center;
+}
+.blog-page-area .blog-page-content .single-blog .media .pull-left .date ul li {
+  margin-top: 22px;
+  line-height: 1.5;
+}
+.blog-page-area .blog-page-content .single-blog .media .pull-left .date ul li span {
+  display: block;
+  color: #ee0548;
+}
+.blog-page-area .blog-page-content .single-blog .media .media-body h4.media-heading {
+  margin-bottom: 10px;
+}
+.blog-page-area .blog-page-content .single-blog .media .media-body h4.media-heading a {
+  color: #382d44;
+  transition: all 0.5s ease 0s;
+  font-size: 20px;
+  font-weight: 800;
+}
+.blog-page-area .blog-page-content .single-blog .media .media-body h4.media-heading a:hover {
+  color: #ee0548;
+}
+.blog-page-area .blog-page-content .single-blog .media .media-body p span {
+  color: #ee0548;
+}
+.blog-page-area .blog-page-content .single-blog .media .media-body .blog-content {
+  margin-top: 20px;
+}
+.blog-page-area .blog-page-content .single-blog .media .media-body .blog-content div.read-more {
+  display: inline-block;
+  margin-top: 10px;
+}
+.blog-page-area .blog-page-content .single-blog .media .media-body .blog-content div.read-more a {
+  display: block;
+  padding: 10px 30px;
+  color: #ee0548;
+  border: 1px solid #ee0548;
+  transition: all 0.5s ease 0s;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+}
+.blog-page-area .blog-page-content .single-blog .media .media-body .blog-content div.read-more a:hover {
+  background: #ee0548;
+  color: #ffffff;
+}
+.pagination-area {
+  padding-top: 30px;
+}
+.pagination-area ul {
+  text-align: center;
+}
+.pagination-area ul li {
+  display: inline-block;
+}
+.pagination-area ul li.active a {
+  background: #ee0548;
+  color: #ffffff;
+}
+.pagination-area ul li a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background: transparent;
+  border: 1px solid #ee0548;
+  color: #000000;
+  font-size: 18px;
+  text-decoration: uppercase;
+  transition: all 0.5s ease 0s;
+}
+.pagination-area ul li a:hover {
+  background: #ee0548;
+  color: #ffffff;
+}
+.pull-left {
+  margin-right: 20px;
+  float: left;
+}
+

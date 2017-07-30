@@ -14,4 +14,9 @@
 		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
 <!-- 用户管理的service -->
 <bean id="UserService" class="com.ttc.ssm.service.impl.UserServiceImpl"/>
+<bean id="LibraryService" class="com.ttc.ssm.service.impl.LibraryServiceImpl"/>
+<bean id="QuestionService" class="com.ttc.ssm.service.impl.QuestionServiceImpl"/>
+<bean id="RecordService" class="com.ttc.ssm.service.impl.RecordServiceImpl"/>
 </beans>
+
+

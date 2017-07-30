@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ttc.ssm.mapper.RecordMapper" >
+    <resultMap id="BaseResultMap" type="com.ttc.ssm.po.UserRecord" >
+     <id column="userid" property="userid" jdbcType="INTEGER" />
+     <result column="type" property="type" jdbcType="CHAR" />
+     <result column="score" property="score" jdbcType="INTEGER" />
+     <result column="description" property="description" jdbcType="CHAR" /> 
+     <result column="version" property="version" jdbcType="INTEGER" />  
+   </resultMap>
+   
+    <insert id="insert" parameterType="com.ttc.ssm.po.UserRecord" >
+     insert into testrecord(userid,type,score,description,version)
+     values(#{userid,jdbcType=INTEGER},#{type,jdbcType=CHAR},#{score,jdbcType=INTEGER},#{description,jdbcType=CHAR},#{version,jdbcType=INTEGER})
+    </insert>
+    
+    
+    <sql id="Base_Column_List" >
+    userid,type,score,description,version
+    </sql>
+    
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from testrecord
+    where userid = #{id,jdbcType=INTEGER}
+    </delete>
+    
+    <update id="updateByPrimaryKeySelective" parameterType="com.ttc.ssm.po.UserRecord" >
+    update testrecord
+    <set >
+      <if test="type != null" >
+        type = #{type,jdbcType=CHAR},
+      </if>
+      <if test="score != null" >
+        score = #{score,jdbcType=INTEGER},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=CHAR},
+      </if>
+      <if test="version != null" >
+        description = #{version,jdbcType=INTEGER},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
+    
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+      select 
+     <include refid="Base_Column_List" />
+    from testrecord
+    where userid = #{id,jdbcType=INTEGER}
+    </select>
+    
+    <select id="getRecordList" resultType="com.ttc.ssm.po.UserRecord">
+      select * from testrecord
+    </select>
+    
+    <select id="getRecordListByPrimaryKey" resultType="com.ttc.ssm.po.UserRecord" parameterType="java.lang.Integer">
+      select * from testrecord
+      where userid = #{id,jdbcType=INTEGER}
+    </select>
+</mapper>

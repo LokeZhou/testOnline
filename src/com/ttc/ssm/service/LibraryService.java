@@ -14,6 +14,8 @@ public interface LibraryService {
 	 
 	 Library selectByPrimaryKey(Integer id);
 	 
+	 ArrayList<Integer> selectByType(String type);
+	 
 	 ArrayList<Library> getLibraryList();
 	 
 	 int checkMaxVersionByPrimaryKey(Integer id);

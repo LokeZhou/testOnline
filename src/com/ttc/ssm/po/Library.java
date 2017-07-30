@@ -1,58 +1,53 @@
 package com.ttc.ssm.po;
 
+import javax.validation.constraints.NotNull;
+
+import com.ttc.ssm.controller.validation.ValidGroup4;
+
 /**
  * @author Loke.Z
  *
  */
+
 public class Library {
 
-	private int libraryUserId;
-	private String libraryType;
-	private int libraryVersions;
-	private int libraryQuestions;
+	private int userid;
+	@NotNull(message = "问题类型未选！", groups = { ValidGroup4.class })
+	private String type;
+	private int versions;
+	@NotNull(message = "题量不能为空！", groups = { ValidGroup4.class })
+	private int questions;
 
-	public Library()
-	{
-		
-	}
-	
-	public Library(Library record)
-	{
-		libraryUserId=record.getLibraryUserId();
-		libraryType=record.getLibraryType();
-		libraryVersions=record.getLibraryVersions();
-		libraryQuestions=record.getLibraryQuestions();
-	}
-	public int getLibraryUserId() {
-		return libraryUserId;
+	public int getUserid() {
+		return userid;
 	}
 
-	public void setLibraryUserId(int libraryUserId) {
-		this.libraryUserId = libraryUserId;
+	public void setUserid(int userid) {
+		this.userid = userid;
 	}
 
-	public String getLibraryType() {
-		return libraryType;
+	public String getType() {
+		return type;
 	}
 
-	public void setLibraryType(String libraryType) {
-		this.libraryType = libraryType;
+	public void setType(String type) {
+		this.type = type;
 	}
 
-	public int getLibraryVersions() {
-		return libraryVersions;
+	public int getVersions() {
+		return versions;
 	}
 
-	public void setLibraryVersions(int libraryVersions) {
-		this.libraryVersions = libraryVersions;
+	public void setVersions(int versions) {
+		this.versions = versions;
 	}
 
-	public int getLibraryQuestions() {
-		return libraryQuestions;
+	public int getQuestions() {
+		return questions;
 	}
 
-	public void setLibraryQuestions(int libraryQuestions) {
-		this.libraryQuestions = libraryQuestions;
+	public void setQuestions(int questions) {
+		this.questions = questions;
 	}
 
 }

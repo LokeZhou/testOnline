@@ -6,7 +6,7 @@
      <result column="userName" property="userName" jdbcType="CHAR" />
      <result column="userPassword" property="userPassword" jdbcType="CHAR" />
      <result column="userTelephone" property="userTelephone" jdbcType="CHAR" />
-     <result column="useEmail" property="useEmail" jdbcType="CHAR" />
+     <result column="useremail" property="useremail" jdbcType="CHAR" />
      <result column="userRank" property="userRank" jdbcType="INTEGER" />
      <result column="testTime" property="testTime" jdbcType="INTEGER" />
      <result column="upload" property="upload" jdbcType="INTEGER" />
@@ -15,7 +15,7 @@
    <insert id="insert" parameterType="com.ttc.ssm.po.User" >
     insert into testuser(userid,username,userpassword,usertelephone,useremail,userrank,testtime,upload,usersex)
     values(#{userId,jdbcType=INTEGER},#{userName,jdbcType=CHAR},#{userPassword,jdbcType=CHAR},#{userTelephone,jdbcType=CHAR},
-    #{useEmail,jdbcType=CHAR},#{userRank,jdbcType=INTEGER},#{testTime,jdbcType=INTEGER},#{upload,jdbcType=INTEGER},#{userSex,jdbcType=VARCHAR})
+    #{userEmail,jdbcType=CHAR},#{userRank,jdbcType=INTEGER},#{testTime,jdbcType=INTEGER},#{upload,jdbcType=INTEGER},#{userSex,jdbcType=VARCHAR})
     </insert>
     
     <sql id="Base_Column_List" >
@@ -39,8 +39,8 @@
       <if test="userTelephone != null" >
         usertelephone = #{userTelephone,jdbcType=CHAR},
       </if>
-      <if test="useEmail != null" >
-        useemail = #{useEmail,jdbcType=CHAR},
+      <if test="userEmail != null" >
+        useremail = #{userEmail,jdbcType=CHAR},
       </if>
       <if test="userRank != null" >
         userrank = #{userRank,jdbcType=INTEGER},

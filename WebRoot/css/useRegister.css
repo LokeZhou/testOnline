@@ -1,0 +1,257 @@
+@charset "utf-8";html{background-color:#fff;color:#000;font-size:12px}
+body,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,figure,form,fieldset,legend,input,textarea,button,p,blockquote,th,td,pre,xmp{margin:0;padding:0}
+body,input,textarea,button,select,pre,xmp,tt,code,kbd,samp{line-height:1.5;font-family:tahoma,arial,"Hiragino Sans GB",simsun,sans-serif}
+h1,h2,h3,h4,h5,h6,small,big,input,textarea,button,select{font-size:100%}
+h1,h2,h3,h4,h5,h6{font-family:tahoma,arial,"Hiragino Sans GB","微软雅黑",simsun,sans-serif}
+h1,h2,h3,h4,h5,h6,b,strong{font-weight:normal}
+address,cite,dfn,em,i,optgroup,var{font-style:normal}
+table{border-collapse:collapse;border-spacing:0;text-align:left}
+caption,th{text-align:inherit}
+ul,ol,menu{list-style:none}
+fieldset,img{border:0}
+img,object,input,textarea,button,select{vertical-align:middle}
+article,aside,footer,header,section,nav,figure,figcaption,hgroup,details,menu{display:block}
+audio,canvas,video{display:inline-block;*display:inline;*zoom:1}
+blockquote:before,blockquote:after,q:before,q:after{content:"\0020"}
+textarea{overflow:auto;resize:vertical}
+input,textarea,button,select,a{outline:0 none}
+button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}
+mark{background-color:transparent}
+a,ins,s,u,del{text-decoration:none}
+sup,sub{vertical-align:baseline}
+a{color:#0069ca}
+a:hover{text-decoration:none;color:#f60}
+.clr,.clear{clear:both;height:0;overflow:hidden}
+.fix{*zoom:1}
+.fix:after{clear:both;display:block;height:0;visibility:hidden;content:"\20"}
+.clr_after{height:1%}
+.clr_after:after{clear:both;display:block;height:0;visibility:hidden;content:"."}
+.pointer{cursor:pointer}
+.clearfix:after{content:'';display:block;overflow:hidden;height:0;clear:both}
+.clearfix{zoom:1}
+.qn_footer{clear:both;margin:0 auto;padding:10px 0;width:979px;line-height:1.231;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#848484}
+.qn_footer .inner{margin:0 10px;text-align:right}
+.qn_footer .gs{float:right;margin:0 15px 0 0}
+.qn_footer .cr{margin-right:58px;padding-bottom:12px}
+.jx-ie6 .qn_footer .cr{margin-right:60px}
+.qn_footer .links{margin:0;padding:2px 0 0;list-style:none}
+.qn_footer .links a,.qn_footer .links a:visited{margin:0 5px;text-decoration:none;color:#848484}
+.qn_footer .links a:hover{color:#f60}
+.qn_footer .links a.hl,.qn_footer .links a.hl:visited{color:#f60}
+.qn_footer .copyright{margin:0;padding:8px 5px 0 0}
+.qn_footer .copyright2{margin:0;padding:8px 5px 0 0;text-align:center}
+.qn_footer .copyright a,.qn_footer .copyright a:visited{text-decoration:none;color:#848484}
+.seo{border-top:1px solid #ddd}
+.seo .seo_links{clear:both;margin:10px 0 0;padding:0;color:#a7a7a7}
+.seo .seo_links a,.seo .seo_links a:visited{margin-right:6px;text-decoration:none;color:#a7a7a7}
+.seo .seo_links dt{float:left;padding-left:25px;font-weight:700}
+.seo .seo_links dd{margin-left:88px;padding:0;word-spacing:5px}
+.seo .seo_links dd span{float:left;margin-right:6px;white-space:nowrap}
+.qcbox{position:relative}
+.qunar-qcbox{position:relative;height:35px;border:1px solid #ccc;font:normal 12px/1.5 tahoma,Geneva,sans-serif;background-color:#fff;color:#555;zoom:1}
+.qunar-qcbox .textbox{outline:0;margin:0;border:0;width:160px;height:18px;font:normal 12px/18px simsun,arial,sans-serif;background-color:#fff;position:absolute;top:0}
+.qunar-qcbox .qcbox-prefix{position:absolute;top:10px;top:11px\0;*top:14px;_top:12px;left:0;line-height:12px;padding:0 4px 0 4px;font-size:12px;text-align:right;cursor:pointer;color:#999}
+.qunar-qcbox .qcbox-info{position:absolute;top:10px;right:3px;padding:0;height:15px;font-size:12px;line-height:15px;border-left:dotted 1px #cfcfcf;text-align:right;cursor:pointer;width:24px}
+.qunar-qcbox .qcbox-info b{position:absolute;right:6px;top:6px;border-width:4px;border-style:solid;border-color:#555 #fff #fff #fff;width:0;height:0;font-size:0;line-height:0;display:block}
+.qunar-qcbox .qcbox-placeholder{white-space:nowrap;position:absolute;text-align:left;color:#ccc;top:0;*top:2px;_top:0;z-index:1}
+.qunar-qcbox .qcbox-fixed{position:absolute;left:-1px;top:35px;*top:37px;z-index:1000}
+.cs{float:left;height:26px;position:relative}
+.csSelect{position:relative;width:90px}
+.csSelect .csStitle{cursor:pointer;border:1px solid #b7b7b7;padding:1px 4px;height:22px;line-height:22px;width:82px;background:#fff;position:relative}
+.csSelect .csSarrow{border-left:1px solid #555;position:absolute;right:0;top:3px}
+.csSelect .csSarrow b{width:20px;height:18px;background:url(http://simg4.qunarzz.com/site/images/homepage/ico_a.png) no-repeat scroll 4px 6px;display:block;cursor:pointer}
+.csSlist{display:none;position:absolute;background:#fff;width:100%;border:1px solid #bababa;border-top:0;overflow-y:auto;overflow-x:hidden}
+.csSlist li{line-height:auto!important;margin:0!important;background:#FFF}
+.csSlist a{display:block;padding:2px 4px;color:#555;outline:0;background:#fff;height:16px;width:90px}
+.csSlist a:hover{background:#0069ca;color:#fff}
+.qcbox .hotcity{border:1px solid #ccc;background-color:#fff}
+.showblock{background:none repeat scroll 0 0 #fff;font-size:12px;line-height:22px;margin:0;padding:6px 10px;width:298px}
+.showblock b.oymTitle{display:block;font-size:14px;font-weight:700}
+.showblock p{border-bottom:1px dotted #ccc;margin-bottom:8px;padding-bottom:8px;word-spacing:6px}
+.showblock p.last{border-bottom:0 none;margin-bottom:0;padding-bottom:0}
+.showblock a{color:#0069ca;cursor:pointer;white-space:nowrap}
+.showblock a:hover{color:#f60}
+.qcbox_err .qunar-qcbox{border-color:#f00}
+.qcbox_err .qcbox-placeholder{color:#f00}
+.qunar-qcbox .qcbox-select{width:100%;padding-left:0;right:0;background:url("http://simg4.qunarzz.com/qui/common/trans.gif")}
+.qunar-qcbox .qcbox-select b{background:url("http://simg4.qunarzz.com/site/images/homepage/ico_a.png") no-repeat scroll 4px 5px transparent;cursor:pointer;display:block;height:16px;width:20px;border-left:1px solid #bababa}
+.qunar-qcbox .hotcity{background:#fff;border:1px solid #ccc}
+.qunar-qcbox .hotcity .hint{padding:5px;font-size:12px}
+.qunar-qcbox .hint .closeImg{display:block;float:right;width:14px;height:14px;cursor:pointer}
+.qunar-qcbox .hint hr{clear:both;border:0;border-bottom:1px dotted #bbb;color:#fff}
+.qunar-qcbox .hint ul{margin:0;padding:0;height:1%}
+.qunar-qcbox .hint ul:after{clear:both;display:block;height:0;visibility:hidden;content:"\20"}
+.qunar-qcbox .hint ul li{float:left;width:20%!important;text-align:center;height:25px;line-height:25px;overflow:hidden}
+.qunar-qcbox .hint ul li a{color:#333!important}
+.qunar-qcbox .hint ul li a:hover{text-decoration:none;color:#555}
+.qunar-qcbox .hint .inter ul li{width:24%!important}
+.qunar-qcbox .hint .b_hct_tit{padding:3px 0 5px}
+.qunar-qcbox .hint .b_hct_nav{border-bottom:1px solid #ddd;zoom:1;margin-bottom:3px}
+.qunar-qcbox .hint .b_hct_nav:after{clear:both;display:block;height:0;visibility:hidden;content:"."}
+.qunar-qcbox .hint .b_hct_nav span{position:relative;bottom:-1px;float:left;display:inline;margin-right:8px;padding:0 8px;height:20px;font-size:12px;line-height:20px;text-align:center;cursor:pointer;color:#0069ca}
+.qunar-qcbox .hint .b_hct_nav span.active{background:#fff;border:1px solid #ccc;border-bottom:1px solid #fff;color:#333}
+.qunar-qcbox .hint .b_hct_lst{padding-left:9px}
+.qunar-qcbox .hint .e_hct_lst{margin:0;padding:0;height:1%}
+.qunar-qcbox .hint .e_hct_lst:after{clear:both;display:block;height:0;visibility:hidden;content:"\20"}
+.qunar-qcbox .hint .e_hct_lst dt{float:left;display:block;width:16px;color:#0069ca;height:25px;line-height:25px;padding-top:1px;*padding-top:0;padding-top:0\0}
+.qunar-qcbox .hint .e_hct_lst dd{margin-left:20px;zoom:1;_margin-left:0}
+.qunar-qcbox input.textbox::-ms-clear{display:none}
+.ui-city-sug{width:490px;font-size:12px}
+.ui-city-sug .ico-close{display:inline;float:right;width:11px;height:11px;margin:10px 10px 0 0;cursor:pointer;background:url(//source.qunarzz.com/usercenter/common/Hot_close.png) no-repeat;*margin-left:-23px;*position:relative;*zoom:1}
+.ui-city-sug .m-hct-nav{height:28px;padding:5px 10px 0;border-bottom:solid 1px #e8e8e8}
+.ui-city-sug .m-hct-nav span{float:left;display:inline;height:28px;margin:0 5px 0 6px;line-height:28px;cursor:pointer;white-space:nowrap;font-family:arial}
+.ui-city-sug-en .m-hct-nav span{margin-left:5px}
+.ui-city-sug .m-hct-nav span:hover{color:#0085ba}
+.ui-city-sug .m-hct-nav span.active{border-bottom:solid 1px #0085ba;color:#0085ba;font-weight:bold}
+.ui-city-sug .m-hct-lst{padding:10px 0}
+.ui-city-sug .m-hct-lst ul{margin:0;padding:0;height:1%}
+.ui-city-sug .m-hct-lst ul:after{clear:both;display:block;height:0;visibility:hidden;content:"\20"}
+.ui-city-sug .m-hct-lst ul li{float:left;width:24%!important;height:22px;margin-bottom:3px;text-align:left;line-height:22px;overflow:hidden;_width:24%}
+.ui-city-sug .m-hct-lst ul li a{display:block;padding-right:5px;color:#333}
+.ui-city-sug .m-hct-lst ul li a:hover{color:#0085ba;font-weight:bold}
+.ui-city-sug .m-hct-lst .inter ul li{width:24%!important}
+.ui-city-sug .e-hct-lst{margin:0;padding:0 5px 0 0;height:1%}
+.ui-city-sug .e-hct-lst:after{clear:both;display:block;height:0;visibility:hidden;content:"\20"}
+.ui-city-sug .e-hct-lst dt{float:left;display:block;width:30px;height:22px;padding-left:18px;color:#666;line-height:22px;white-space:nowrap}
+.ui-city-sug .e-hct-lst dd{margin-left:16px;zoom:1}
+.ui-city-sug .e-fuzzy-line{display:block;overflow:hidden;border-top:1px solid #ededed;margin:5px 0 5px 48px;height:0;line-height:0}
+.qcity .hotelhint{font-size:12px}
+.qcity .hotelhint .closeImg{cursor:pointer;display:block;float:right;height:14px;width:14px;margin-right:7px;margin-top:7px}
+.qcity .hotelhint ul{height:1%;margin:0;padding:0;margin-left:10px}
+.qcity .hotelhint ul:after{clear:both;content:" ";display:block;height:0;visibility:hidden}
+.qcity .hotelhint ul li{float:left;height:24px;vertical-align:middle;line-height:24px;overflow:hidden;text-align:left;width:20%}
+.qcity .hotelhint ul li a{color:#333;font-size:12px}
+.qcity .hotelhint ul li a:hover{color:#0084bb;text-decoration:none;font-weight:700}
+.qcity .hotelhint .b_hct_tit{font-size:12px;line-height:12px;padding:10px 10px;padding-bottom:8px;color:#999}
+.qcity .hotelhint .b_hct_nav{border-bottom:1px solid #e8e8e8;padding-left:10px;zoom:1}
+.qcity .hotelhint .b_hct_nav:after{clear:both;content:".";display:block;height:0;visibility:hidden}
+.qcity .hotelhint .b_hct_nav span{position:relative;bottom:-1px;float:left;display:inline;margin-right:25px;color:#0084bb;cursor:pointer;font-size:12px;height:32px;line-height:32px;text-align:center}
+.qcity .hotelhint .b_hct_nav span.active{border-bottom:1px solid #0084bb;font-weight:bold}
+.qcity .hotelhint .b_hct_lst{padding:9px 0 0 10px}
+.qcity .hotelhint .e_hct_lst{height:1%;margin:0;padding:0}
+.qcity .hotelhint .e_hct_lst:after{clear:both;content:" ";display:block;height:0;visibility:hidden}
+.qcity .hotelhint .e_hct_lst dt{color:#0084bb;display:block;float:left;height:24px;line-height:24px;text-align:left;width:10px;font-weight:bold;vertical-align:middle}
+.qcity .hotelhint .e_hct_lst dd{display:block;line-height:24px;margin-left:10px;_margin-left:0}
+.qcity .hotelhint .b_hct_tip{color:#999;text-align:right;padding:8px 15px 15px 0}
+.qsuggest-contaier{position:relative}
+.q-suggest{font:12px/1.5 arial,simsun,sans-serif;position:absolute;top:-1px;left:0;border:1px solid #ccc}
+.q-suggest table tr{color:#404040;padding:1px 0 2px}
+.q-suggest table tr td{height:24px;line-height:24px;font-size:12px;padding:0 5px;white-space:nowrap;color:#555;cursor:pointer}
+.q-suggest table tr.active td{background-color:#39f;color:#fff}
+.q-suggest table tr td .highlight{color:#fd1664}
+.q-suggest table tr.active td .highlight{color:#fff}
+.q-suggest table tr td .keyString{color:#f60}
+.q-suggest table{background:none repeat scroll 0 0 #fff;cursor:default;min-width:200px;width:auto}
+.qcity_guess{line-height:24px;padding:0 5px;background:#fffedf;white-space:nowrap}
+.qcity_guess .hl{padding-left:4px;color:#f60}
+.q-suggest td p.poi-in-address{background:url("//source.qunarzz.com/qui/common/search_sug.png") no-repeat scroll 0 6px;_background-image:url(//source.qunarzz.com/qui/common/search_sug4.png);margin-left:6px;padding-left:14px}
+.q-suggest td p.poi-in-hotelname{background:url("//source.qunarzz.com/qui/common/search_sug.png") no-repeat scroll 0 -48px;_background-image:url(//source.qunarzz.com/qui/common/search_sug4.png);margin-left:6px;padding-left:14px}
+.q-suggest tr.poi-in-name{border-bottom:1px solid #eee}
+.q-suggest tr.active td p.poi-in-address{background-position:0 -30px}
+.q-suggest tr.active td p.poi-in-hotelname{background-position:0 -12px}
+.q-suggest table{*border-collapse:collapse}
+.q-suggest tr.poi-in-name td{*border-bottom:1px solid #eee}
+.q-suggest tr.errorMsg td{color:#fff;background-color:#c30}
+.btn{color:#FFF;background:#0b60f0;border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);border:1px solid transparent;text-align:center;white-space:nowrap;cursor:pointer;font-size:12px;line-height:18px;text-decoration:none;outline:0;border-radius:2px}
+.btn:hover{background-color:#2070f8}
+.btn-hidden{display:none}
+.btn-orange{background:#ff8200;height:30px;font-size:14px}
+.btn-orange:hover{background:#ff9c00}
+.btn-disable,.btn-disable:hover{background:#b6b6b6;color:white}
+.btn-readonly,.btn-readonly:hover{background:#b6b6b6;color:white}
+.textbox{padding:0 0 0 10px;border:1px solid #ccc;color:#666;outline:0 none;font-size:14px;background-color:#fff;font-family:tahoma,arial,sans-serif}
+.textbox:hover,.textbox-hover{border-color:#5abec6}
+.textbox:focus,.textbox-focus{border-color:#5abec6}
+.textbox-readonly{background-color:black;border-color:black}
+.textbox-disable{border-color:black}
+.textbox-hidden{display:none}
+.textbox-small{height:20px}
+.textbox-middle{height:28px}
+.textbox-big{height:34px;width:244px;box-sizing:content-box}
+.textbox-placeholder{position:absolute;display:inline-block;overflow:hidden;font-size:14px;font-family:tahoma,arial,sans-serif;width:252px;height:36px;line-height:36px;margin-left:20px;margin-top:1px;color:#ccc;vertical-align:middle}
+input.textbox::-ms-clear,input.textbox::-ms-reveal{display:none}
+.textbox-clear,.textbox-eye{position:absolute;width:26px;height:32px;margin:2px 0 0 -27px;background:url("//source.qunarzz.com/usercenter/common/close_v2.png") no-repeat center center;outline:0;cursor:pointer;vertical-align:middle;background-color:white;display:none}
+.textbox-eye{margin-left:-27px;background:url("//source.qunarzz.com/usercenter/common/eye.png") no-repeat 3px center;background-color:white;_margin-top:13px;_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="//source.qunarzz.com/usercenter/common/eye.png")}
+.textbox-preview{display:none}
+.textbox-preview-show{padding:0 0 0 10px;border:1px solid #ccc;color:#666;outline:0 none;font-size:14px;background-color:#fff;border-color:#5abec6}
+.textbox-group{padding:10px 0;color:#999;font-family:tahoma,arial,sans-serif;height:36px;font-size:0;font-size:1px\9;-webkit-text-size-adjust:none;vertical-align:middle}
+.textbox-group span,.textbox-group label{font-size:12px;font-family:tahoma,arial,sans-serif;vertical-align:middle}
+.textbox-group .textbox-placeholder{font-size:14px;font-family:tahoma,arial,sans-serif}
+.textbox-group-hidden{display:none}
+.textbox-group .label{display:inline-block;width:80px;text-align:right;font-size:14px;vertical-align:middle}
+.textbox-group .textbox,.textbox-group .textbox-preview-show{display:inline-block;line-height:34px;height:34px;width:244px;box-sizing:content-box;margin-left:10px;font-size:14px;font-family:tahoma,arial,sans-serif;vertical-align:middle}
+.textbox-group .textbox-hidden{display:none}
+.textbox-group .textbox-short{width:97px}
+.textbox-group .vcodeimg{display:inline-block;width:96px;height:30px;line-height:30px;margin-left:10px;vertical-align:middle}
+.textbox-group .btn{display:inline-block;width:96px;margin-left:10px;vertical-align:middle}
+.textbox-group .btn{_position:relative;_top:8px;_vertical-align:baseline;padding-top:2px\9;_padding-top:0;line-height:18px}
+.textbox-group .a{display:inline-block;font-size:12px;font-family:tahoma,arial,sans-serif;color:#006bc8;text-decoration:none;margin-left:5px;vertical-align:middle}
+.textbox-group .a:hover{text-decoration:none;color:#f60}
+.textbox-group .note{display:none;background:0;margin-left:7px;min-height:16px;max-height:35px;width:230px;font-size:12px;margin-left:10px;vertical-align:middle}
+.textbox-group .note-none{display:inline-block;background:0;padding-left:0}
+.textbox-group .note-no{display:inline-block;padding-left:20px;color:#ff9261;background:url(//user.qunar.com/images/ugc/ucenter/error_v2.png) 0 45% no-repeat}
+.textbox-group .note-yes{display:inline-block;padding-left:20px;background:url(//user.qunar.com/images/ugc/ucenter/icons/icon_accept_v2.gif) 0 45% no-repeat}
+.textbox-group .note-prompt{display:inline-block;padding-left:20px;background:url(//user.qunar.com/images/ugc/ucenter/prompt.png) 0 45% no-repeat}
+.textbox-group-wrap-error{height:56px}
+.textbox-group-wrap-error .note-no{background-position:0 50%;display:block;margin:5px 0 10px 87px;width:auto}
+.phone-tooltip,.password-tooltip{position:relative;z-index:100000}
+.phone-tooltip ul{position:absolute;display:block;top:-52px;left:0;width:266px;height:60px;margin-left:84px;padding-left:5px;font-family:Tahoma;font-size:24px;vertical-align:middle;text-align:center;color:#666;list-style:outside none none;background:url(//source.qunarzz.com/usercenter/register/bg-phonetip-v2.png) 0 0 no-repeat;_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="//source.qunarzz.com/usercenter/register/bg-phonetip-v2.png");z-index:1000}
+.phone-tooltip ul li{float:left;width:22px;line-height:38px;margin:8px 0;padding-left:1px;font-family:tahoma,arial,sans-serif;zoom:1}
+.phone-tooltip ul li:first-child{border-left:none}
+.phone-tooltip-hidden ul{display:none}
+.password-tooltip ul{display:block;position:absolute;top:47px;left:109px;list-style:outside none none;margin:0;padding:0;padding:21px 0 4px 21px;color:#666;height:82px;width:195px;background:url(//source.qunarzz.com/usercenter/register/bg-passwordtip2.png) 0 0 no-repeat;_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="//source.qunarzz.com/usercenter/register/bg-passwordtip2.png");z-index:1000}
+.password-tooltip ul li{line-height:23px;height:23px;width:165px;padding-left:20px;background-color:white;vertical-align:middle;font-size:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.password-tooltip-hidden ul{display:none}
+.password-tooltip ul li{color:#666;background:0 center no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAARCAIAAABiqgrIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACBSURBVChTxZCxEsAQEETz/1+Y0tApaRl5sTeSwkyo8gpu99Y4jrbMTrTWauUXTzTn7Jw7OxRI+QOLxhi997SRQIHEVEjcUTVKKeZ1kDpsWtHpdYBJy4SiDMdqxgu1TGxHNwbAWn0WG/8SQqCBHIcnn6UqpcR1DAfTkZ7oJz9HW7sAn/a6I6ckHQIAAAAASUVORK5CYII=);*background:0 2px no-repeat url(//source.qunarzz.com/usercenter/register/bg-tooltip.png)}
+.password-tooltip .right{color:#666;background:0 center no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAOCAIAAAB7HQGFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACiSURBVChTY/hPHCBa3d+/fyGsky8PVp5ID95hC0RAxsmXhyDiEAA1b9HNqVF71fJPitRc4AIiIAPIBQpCZIEApA6oFShadZ677iIHHAG5QEGgJQh1QFuABiArgiCgIFAKoS5kp231BS40RUAEFARKEVYHdCjQTwh1xNoLdCxR/gACYBBE71MrwB8uEHDiBSScbYAIyICbBAEIdfgBcer+/wcAYzmbdKNShH4AAAAASUVORK5CYII=);*background:0 -43px no-repeat url(//source.qunarzz.com/usercenter/register/bg-tooltip.png)}
+.password-tooltip .error{color:red;background:0 center no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAPCAIAAACwQdIgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACuSURBVChTjZBBDoQgDEXncOpxXKpn8ToieBgWsgDDApjfKUbiguGnCb/l0QKf1KZmLoSQbVUP54U4x1H3PQLG7zvXWZmz62rm2SsVnUN4Kc00ocgQRByOohqNybWfkNJJITgljqZIyXkptMcWe+L0MERrOS+FIrbYVznn8Cb291ylOC/1novL4sr/34GF/mVZ/HHE60KgE6D3v7Dz24YpuusQdJO7E+vh6mrjUvoC5WIb6qXDtwUAAAAASUVORK5CYII=);*background:0 -20px no-repeat url(//source.qunarzz.com/usercenter/register/bg-tooltip.png)}
+.phone-tooltip-hidden,.password-tooltip-hidden{position:static}
+.safe-grade{display:inline-block;width:120px;vertical-align:middle;margin-left:10px}
+.safe-grade-hidden{display:none}
+.safe-grade i{width:26px;height:10px;margin-top:5px;margin-right:2px;float:left;background-color:#ccc}
+.safe-grade i.safe-grade-low{background-color:#f55}
+.safe-grade i.safe-grade-middle{background-color:#f4a831}
+.safe-grade i.safe-grade-high{background-color:#54b83f}
+.safe-grade .text{width:26px;margin-left:5px}
+.safe-grade .text-low{color:#f55;margin-left:5px}
+.safe-grade .text-middle{color:#f4a831;margin-left:5px}
+.safe-grade .text-high{color:#54b83f;margin-left:5px}
+.qunar-countrycode{width:256px}
+.qunar-countrycode .qunar-qcbox{color:#666;clear:both}
+.qunar-countrycode .qunar-qcbox:hover{border-color:#5abec6}
+.qunar-countrycode .qcbox-placeholder{color:#ccc}
+.qunar-countrycode .textbox{height:34px;line-height:34px;width:244px;padding-left:10px;font-family:tahoma,arial,sans-serif;font-size:14px}
+.qunar-countrycode .qunar-qcbox{height:34px;line-height:34px}
+.register-page{width:980px;margin:0 auto;color:#555}
+.page-title{width:980px;line-height:53px;height:53px;padding:20px 11px}
+.page-title div{font:normal 18px/18px "microsoft yahei",arial,sans-serif;padding-left:20px;float:left;padding-top:34px}
+.page-logo{display:block;width:138px;height:53px;float:left;cursor:pointer;background:url(https://user.qunar.com/images/ugc/ucenter/login-logo.png)}
+.page-content{margin:0 auto;background:#fff;border-top:1px solid #ddd;border-bottom:1px solid #ddd;min-height:455px;*height:455px}
+.page-content form{float:left;width:615px;clear:both;padding:40px 0 0 30px}
+.page-sidebar{width:320px;height:455px;padding-right:0;float:left}
+.page-sidebar .gpk2{padding:10px;font:normal 12px/25px simsun;margin-top:44px}
+.page-sidebar .gpk2 dt{font-size:14px}
+.page-sidebar .gpk2 ul{padding-left:14px;list-style:disc outside none}
+.page-sidebar .gpk2 li{padding-top:5px}
+.page-sidebar .gpk2 .hl{color:#fd017c}
+.textbox-group-rule{line-height:20px;height:20px;padding:5px 0 0 0;margin-left:85px;*margin-left:87px}
+.textbox-group-rule .a{display:inline;margin-left:0;height:18px}
+.textbox-group-rule *{vertical-align:middle}
+.textbox-group-submit{margin:10px 0 0 78px;*margin-left:80px;vertical-align:middle}
+.textbox-group-submit .a{display:inline;height:18px;vertical-align:baseline}
+.textbox-group-submit .btn{width:116px;height:30px;font-size:14px;color:white;border:0}
+.textbox-group-submit span{display:inline-block;margin-left:5px;font-size:12px;vertical-align:middle}
+.countrycode-fix .label{position:relative;float:left;padding-top:8px}
+.qunar-countrycode{float:left;margin-left:10px}
+.qunar-countrycode .textbox{margin-left:0;*margin-left:-10px}
+.clearfix{clear:both}
+.textbox-group .textbox-placeholder{font-size:14px}
+.qn_s_header{width:100%;height:28px;border-bottom:1px solid #ddd;background-color:#f5f5f5}
+.qn_s_header .q_s_header_tnav{width:980px;margin:0 auto}
+.qn_s_header .q_s_header_tnav ul{float:right;display:inline;line-height:14px;padding-top:8px;font-family:tahoma,arial,sans-serif;height:14px}
+.qn_s_header .q_s_header_tnav li{float:left;display:inline}
+.qn_s_header .q_s_header_tnav li a{text-decoration:none;color:#555}
+.qn_s_header .q_s_header_tnav li .q_s_header_a{padding:0 8px}
+.qn_s_header .q_s_header_tnav li .q_s_header_a_fix{padding:0 8px;color:#ff7c00}
+.qn_s_header .q_s_header_tnav li .q_s_header_uname{font-family:tahoma;color:#f60}
+.regipmore{margin-bottom:20px;background:url(https://user.qunar.com/images/ugc/ucenter/prompt.png) no-repeat center left;padding-left:26px;color:#555;font:12px/16px '宋体'}

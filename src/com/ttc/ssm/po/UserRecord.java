@@ -1,32 +1,61 @@
 package com.ttc.ssm.po;
 
 public class UserRecord {
-	private int recordUserId;
-	private String recordType;
-	private int recordScore;
+	private Integer userid;
+	private String type;
+	private Integer score;
+	private String description;
+	private Integer version;
 
-	public int getRecordUserId() {
-		return recordUserId;
+	public UserRecord()
+	{
+		userid=null;
+		type=null;
+		score=null;
+		description=null;
+		version=null;
+		
 	}
 
-	public void setRecordUserId(int recordUserId) {
-		this.recordUserId = recordUserId;
+	public Integer getUserid() {
+		return userid;
 	}
 
-	public String getRecordType() {
-		return recordType;
+	public void setUserid(Integer userid) {
+		this.userid = userid;
 	}
 
-	public void setRecordType(String recordType) {
-		this.recordType = recordType;
+	public String getType() {
+		return type;
 	}
 
-	public int getRecordScore() {
-		return recordScore;
+	public void setType(String type) {
+		this.type = type;
 	}
 
-	public void setRecordScore(int recordScore) {
-		this.recordScore = recordScore;
+	public Integer getScore() {
+		return score;
 	}
+
+	public void setScore(Integer score) {
+		this.score = score;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Integer getVersion() {
+		return version;
+	}
+
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
+    
 
 }

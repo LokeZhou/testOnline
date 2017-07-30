@@ -1,0 +1,31 @@
+
+/*#nav {*/
+    /*height: 40px;*/
+    /*border-top: #060 2px solid;*/
+    /*margin-top: 100px;*/
+    /*border-bottom: #060 2px solid;*/
+    /*background-color: #690;*/
+/*}*/
+
+/*#nav ul {*/
+    /*list-style: none;*/
+    /*line-height: 40px;*/
+    /*margin-left: 50px;*/
+/*}*/
+
+#nav li {
+    display: block;
+    float: left;
+    padding: 30px;
+}
+
+/*#nav a {*/
+    /*display: block;*/
+    /*color: #fff;*/
+    /*text-decoration: none;*/
+    /*padding: 0 20px;*/
+/*}*/
+
+/*#nav a:hover {*/
+    /*background-color: #060;*/
+/*}*/

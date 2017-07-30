@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ttc.ssm.mapper.LibraryMapper;
 import com.ttc.ssm.po.Library;
-import com.ttc.ssm.po.User;
+import com.ttc.ssm.service.LibraryService;
 
-public class LibraryServiceImpl {
+public class LibraryServiceImpl implements LibraryService {
 
 	@Autowired
 	LibraryMapper libraryMapper;
@@ -31,6 +31,11 @@ public class LibraryServiceImpl {
     public  Library selectByPrimaryKey(Integer id)
     {
     	return libraryMapper.selectByPrimaryKey(id);
+    }
+    
+   public  ArrayList<Integer> selectByType(String type)
+    {
+    	return libraryMapper.selectByType(type);
     }
 	
     public ArrayList<Library> getLibraryList()
